@@ -1,0 +1,52 @@
+#To check nodes
+kubectl get nodes
+#To see node status changes from time to time
+kubectl get nodes -w
+
+#To check pods
+kubectl get pods -A
+#To check which pod running which node
+kubectl get pods -A -o wide
+
+#To check namespaces
+kubectl get namespaces
+#create
+kubectl create namespace prod
+
+#To see list of API versions
+kubectl api-versions
+
+#To create a deployment using image
+kubectl create deployment nginx --image=nginx
+kubectl get deployments --all-namespaces
+kubectl delete deployment <name>
+#To create deployment using yaml file
+kubectl create -f <yamlFileName>
+kubectl create -f <yamlFileName> --namespace <namespaceName>
+
+
+
+#To describe pod
+kubectl describe pod <podname>
+
+#To create service using image
+kubectl create service nodeport nginx --tcp 80:80
+kubectl get svc
+kubectl get svc --namespace <namespaceName>
+#To create service using yaml file
+kubectl create -f <yamlFileName>
+kubectl create -f <yamlFileName> --namespace <namespaceName>
+
+
+#To view existing tokens
+kubeadm token list
+#create new
+kubeadm token create --print-join-command
+
+#To check logs
+kubectl logs <podName> -n <namespace>
+
+#Volumes
+kubectl create -f <yamlFile>
+kubectl get pv
+
