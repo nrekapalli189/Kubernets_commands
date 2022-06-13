@@ -21,9 +21,9 @@ kubectl create deployment nginx --image=nginx
 kubectl get deployments --all-namespaces
 kubectl delete deployment <name>
 #To create deployment using yaml file
-kubectl create -f <yamlFileName>
-kubectl create -f <yamlFileName> --namespace <namespaceName>
-
+kubectl apply -f <yamlFileName>
+kubectl apply -f <yamlFileName> --namespace <namespaceName>
+kubectl delete -f <yamlFileName>
 
 
 #To describe pod
@@ -34,9 +34,9 @@ kubectl create service nodeport nginx --tcp 80:80
 kubectl get svc
 kubectl get svc --namespace <namespaceName>
 #To create service using yaml file
-kubectl create -f <yamlFileName>
-kubectl create -f <yamlFileName> --namespace <namespaceName>
-
+kubectl apply -f <yamlFileName>
+kubectl apply -f <yamlFileName> --namespace <namespaceName>
+kubectl delete -f <yamlFileName>
 
 #To view existing tokens
 kubeadm token list
