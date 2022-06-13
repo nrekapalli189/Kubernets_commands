@@ -9,7 +9,7 @@ kubectl get pods -A
 kubectl get pods -A -o wide
 
 #To check namespaces
-kubectl get namespaces
+kubectl get namespace
 #create
 kubectl create namespace prod
 
